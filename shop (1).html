@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Shop All Models — BYCYCLE</title>
+<meta name="description" content="Shop the full BYCYCLE Blackline lineup — Urban, Trail, Race, and Fold. Aerospace-grade alloy frames, hand-finished in metallic black.">
+<link rel="canonical" href="https://www.bycycle.com/shop.html">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Ccircle cx='9' cy='22' r='5' stroke='%23B6FF3C' stroke-width='2' fill='none'/%3E%3Ccircle cx='23' cy='22' r='5' stroke='%23B6FF3C' stroke-width='2' fill='none'/%3E%3Cpath d='M9 22l6-11h5l3 11M15 11l3 5' stroke='%23E4E7EC' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<style>
+.shop-hero{padding:150px 0 60px;}
+.shop-hero .eyebrow{justify-content:flex-start;}
+.shop-hero h1{font-size:clamp(2rem,4.4vw,3.2rem);max-width:640px;}
+.shop-toolbar{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:16px;padding-bottom:40px;border-bottom:1px solid var(--border);margin-bottom:44px;}
+.filter-group{display:flex;gap:10px;flex-wrap:wrap;}
+.filter-chip{padding:9px 18px;border-radius:100px;border:1px solid var(--border-strong);font-size:.84rem;font-family:var(--font-mono);color:var(--text-muted);background:var(--surface);transition:all .25s;}
+.filter-chip:hover{border-color:var(--metal-lt);color:var(--text);}
+.filter-chip.active{background:var(--volt);color:#0A0A0C;border-color:var(--volt);font-weight:700;}
+.sort-select{padding:10px 16px;border-radius:10px;background:var(--surface);border:1px solid var(--border-strong);color:var(--text);font-family:var(--font-mono);font-size:.84rem;}
+.shop-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;padding-bottom:100px;}
+.toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(120%);background:var(--text);color:#0A0A0C;padding:14px 24px;border-radius:10px;font-family:var(--font-mono);font-size:.85rem;font-weight:600;z-index:200;transition:transform .4s var(--ease);box-shadow:0 12px 30px -8px rgba(0,0,0,.5);}
+.toast.show{transform:translateX(-50%) translateY(0);}
+.empty-note{text-align:center;color:var(--text-dim);padding:60px 0;grid-column:1/-1;}
+@media (max-width:1024px){.shop-grid{grid-template-columns:repeat(2,1fr);}}
+@media (max-width:860px){.nav-links,.nav-cta .btn{display:none;}.nav-toggle{display:flex;}}
+@media (max-width:560px){.shop-grid{grid-template-columns:1fr;}.container{padding:0 22px;}}
+</style>
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="bg-fixed" aria-hidden="true"></div>
+
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="index.html" class="logo" aria-label="BYCYCLE home">BYCYCLE<span>.</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="shop.html">Shop</a>
+      <a href="index.html#tech">Technology</a>
+      <a href="index.html#why">Why Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.4 12.4a2 2 0 002 1.6h8.2a2 2 0 002-1.6L21 8H6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-badge">0</span>
+      </a>
+      <a href="cart.html" class="btn btn-primary">View Cart</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="shop.html">Shop</a>
+  <a href="index.html#tech">Technology</a>
+  <a href="index.html#why">Why Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="cart.html" class="btn btn-primary">View Cart</a>
+</div>
+
+<main id="main">
+  <section class="shop-hero">
+    <div class="container">
+      <div class="eyebrow">Full Collection</div>
+      <h1>Four builds. One obsession with detail.</h1>
+      <p style="max-width:520px;margin-top:14px;">Every BYCYCLE frame is finished by hand in a matte-metallic black shell, then tuned for its terrain.</p>
+    </div>
+  </section>
+
+  <section style="padding-top:0;">
+    <div class="container">
+      <div class="shop-toolbar">
+        <div class="filter-group" id="filterGroup">
+          <button class="filter-chip active" data-filter="all">All Models</button>
+          <button class="filter-chip" data-filter="Urban">Urban</button>
+          <button class="filter-chip" data-filter="Trail">Trail</button>
+          <button class="filter-chip" data-filter="Race">Race</button>
+          <button class="filter-chip" data-filter="Gravel">Gravel</button>
+          <button class="filter-chip" data-filter="Heritage">Heritage</button>
+          <button class="filter-chip" data-filter="Cruiser">Cruiser</button>
+          <button class="filter-chip" data-filter="Fold">Fold</button>
+          <button class="filter-chip" data-filter="Street">Street</button>
+        </div>
+        <select class="sort-select" id="sortSelect">
+          <option value="default">Sort: Featured</option>
+          <option value="price-asc">Price: Low to High</option>
+          <option value="price-desc">Price: High to Low</option>
+        </select>
+      </div>
+
+      <div class="shop-grid stagger" id="shopGrid"></div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">BYCYCLE<span>.</span></a>
+        <p>Precision bicycles with aerospace-grade alloy frames and a hand-finished metallic black shell.</p>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul><li><a href="product.html?id=urban">Urban</a></li><li><a href="product.html?id=trail">Trail</a></li><li><a href="product.html?id=race">Race</a></li><li><a href="product.html?id=fold">Fold</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul><li><a href="index.html#why">Why Us</a></li><li><a href="index.html#tech">Technology</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul><li><a href="mailto:purchase@bycycle.com">purchase@bycycle.com</a></li><li><a href="tel:+14155550142">+1 (415) 555-0142</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BYCYCLE. All rights reserved.</p>
+      <div class="legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<div class="toast" id="toast">Added to cart</div>
+
+<script src="catalog.js"></script>
+<script src="cart.js"></script>
+<script>
+(function(){
+  "use strict";
+  var grid = document.getElementById('shopGrid');
+  var currentFilter = 'all';
+  var currentSort = 'default';
+
+  function productCard(p){
+    var div = document.createElement('div');
+    div.className = 'glass model-card reveal in';
+    div.innerHTML =
+      '<span class="model-badge">' + p.badge + '</span>' +
+      '<div class="model-photo-wrap"><img class="model-photo" src="' + p.photo + '" alt="' + p.name + '" loading="lazy"></div>' +
+      '<h3>' + p.name + '</h3>' +
+      '<p>' + p.tagline + '</p>' +
+      '<div class="model-price">$' + p.price.toLocaleString() + ' <span>24 colors available · Free shipping</span></div>' +
+      '<a href="product.html?id=' + p.id + '" class="btn btn-ghost" style="margin-bottom:10px;">Customize &amp; View</a>' +
+      '<button type="button" class="btn btn-primary quick-add" data-id="' + p.id + '">Add to Cart</button>';
+    return div;
+  }
+
+  function render(){
+    var items = Object.values(CATALOG);
+    if(currentFilter !== 'all'){
+      items = items.filter(function(p){ return p.badge === currentFilter; });
+    }
+    if(currentSort === 'price-asc') items.sort(function(a,b){ return a.price - b.price; });
+    if(currentSort === 'price-desc') items.sort(function(a,b){ return b.price - a.price; });
+
+    grid.innerHTML = '';
+    if(items.length === 0){
+      grid.innerHTML = '<p class="empty-note">No models match this filter.</p>';
+      return;
+    }
+    items.forEach(function(p){ grid.appendChild(productCard(p)); });
+  }
+
+  document.getElementById('filterGroup').addEventListener('click', function(e){
+    var btn = e.target.closest('.filter-chip');
+    if(!btn) return;
+    document.querySelectorAll('.filter-chip').forEach(function(c){ c.classList.remove('active'); });
+    btn.classList.add('active');
+    currentFilter = btn.dataset.filter;
+    render();
+  });
+
+  document.getElementById('sortSelect').addEventListener('change', function(e){
+    currentSort = e.target.value;
+    render();
+  });
+
+  grid.addEventListener('click', function(e){
+    var btn = e.target.closest('.quick-add');
+    if(!btn) return;
+    var product = CATALOG[btn.dataset.id];
+    Cart.addItem(product, 1, {});
+    showToast(product.name + ' added to cart');
+  });
+
+  var toast = document.getElementById('toast');
+  var toastTimer;
+  function showToast(msg){
+    toast.textContent = msg;
+    toast.classList.add('show');
+    clearTimeout(toastTimer);
+    toastTimer = setTimeout(function(){ toast.classList.remove('show'); }, 2200);
+  }
+
+  render();
+
+  /* nav scroll + mobile toggle (shared behavior) */
+  var nav = document.getElementById('nav');
+  window.addEventListener('scroll', function(){
+    nav.classList.toggle('scrolled', window.scrollY > 30);
+  });
+  var toggle = document.getElementById('navToggle');
+  var panel = document.getElementById('mobilePanel');
+  toggle.addEventListener('click', function(){
+    var open = panel.classList.toggle('open');
+    toggle.classList.toggle('open', open);
+    toggle.setAttribute('aria-expanded', open);
+  });
+  panel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      panel.classList.remove('open');
+      toggle.classList.remove('open');
+    });
+  });
+})();
+</script>
+</body>
+</html>

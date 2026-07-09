@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>BYCYCLE — Precision Bicycles, Engineered to Ride</title>
+<meta name="description" content="BYCYCLE builds precision bicycles with aerospace-grade alloy frames and a hand-finished metallic black shell. Shop urban, trail, race and folding models.">
+<meta name="keywords" content="bicycle, bike shop, metallic bike, alloy frame bicycle, urban bike, trail bike, road bike, folding bike">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://www.bycycle.com/">
+
+<meta property="og:type" content="website">
+<meta property="og:title" content="BYCYCLE — Precision Bicycles, Engineered to Ride">
+<meta property="og:description" content="Aerospace-grade alloy frames. A hand-finished metallic black shell. Built for the ride that never ends.">
+<meta property="og:url" content="https://www.bycycle.com/">
+<meta name="twitter:card" content="summary_large_image">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230A0A0C'/%3E%3Ccircle cx='9' cy='22' r='5' stroke='%23B6FF3C' stroke-width='2' fill='none'/%3E%3Ccircle cx='23' cy='22' r='5' stroke='%23B6FF3C' stroke-width='2' fill='none'/%3E%3Cpath d='M9 22l6-11h5l3 11M15 11l3 5' stroke='%23E4E7EC' stroke-width='2' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Store",
+  "name": "BYCYCLE",
+  "url": "https://www.bycycle.com",
+  "email": "support@bycycle.com",
+  "description": "Precision bicycles with aerospace-grade alloy frames and a hand-finished metallic black shell."
+}
+</script>
+
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<a href="#main" class="skip-link">Skip to content</a>
+<div class="bg-fixed" aria-hidden="true"></div>
+<canvas id="bike-canvas" aria-hidden="true"></canvas>
+
+<header class="nav" id="nav">
+  <div class="container">
+    <a href="#hero" class="logo" aria-label="BYCYCLE home">BYCYCLE<span>.</span></a>
+    <nav class="nav-links" aria-label="Primary">
+      <a href="shop.html">Shop</a>
+      <a href="#tech">Technology</a>
+      <a href="#why">Why Us</a>
+      <a href="contact.html">Contact</a>
+    </nav>
+    <div class="nav-cta">
+      <a href="cart.html" class="cart-icon" aria-label="Cart">
+        <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M3 4h2l2.4 12.4a2 2 0 002 1.6h8.2a2 2 0 002-1.6L21 8H6" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/><circle cx="9" cy="20" r="1.4" fill="currentColor"/><circle cx="17" cy="20" r="1.4" fill="currentColor"/></svg>
+        <span class="cart-badge" id="navCartBadge">0</span>
+      </a>
+      <a href="shop.html" class="btn btn-primary">Shop Now</a>
+    </div>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false"><span></span></button>
+  </div>
+</header>
+
+<div class="mobile-panel" id="mobilePanel">
+  <a href="shop.html">Shop</a>
+  <a href="#tech">Technology</a>
+  <a href="#why">Why Us</a>
+  <a href="contact.html">Contact</a>
+  <a href="shop.html" class="btn btn-primary">Shop Now</a>
+</div>
+
+<main id="main">
+
+  <section class="hero" id="hero">
+    <div class="container">
+      <div class="hero-tag"><span class="dot"></span> New: The Blackline Series</div>
+      <h1>Precision engineered.<br>Endlessly <em>ridden</em>.</h1>
+      <p class="hero-sub">BYCYCLE blends aerospace-grade alloy, precision-tuned gearing and a hand-finished metallic black shell — built for the ride that never ends.</p>
+      <div class="hero-actions">
+        <a href="shop.html" class="btn btn-primary">Shop the Collection <span class="btn-arrow">→</span></a>
+        <a href="#tech" class="btn btn-ghost">Explore Technology</a>
+      </div>
+      <div class="hero-meta">
+        <div><span class="num">50K+</span><span class="lbl">Frames sold</span></div>
+        <div><span class="num">4.9/5</span><span class="lbl">Average rating</span></div>
+        <div><span class="num">Lifetime</span><span class="lbl">Frame warranty</span></div>
+      </div>
+    </div>
+    <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+  </section>
+
+  <section class="trust-strip">
+    <div class="container">
+      <div class="trust-grid stagger">
+        <div class="trust-item reveal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M3 7h13v9H3zM16 10h3l2 3v3h-5z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><circle cx="7" cy="18" r="1.6" stroke="currentColor" stroke-width="1.4"/><circle cx="17" cy="18" r="1.6" stroke="currentColor" stroke-width="1.4"/></svg><span>Free worldwide shipping</span></div>
+        <div class="trust-item reveal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M12 3l8 4v5c0 5-3.5 8-8 9-4.5-1-8-4-8-9V7l8-4z" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Lifetime frame warranty</span></div>
+        <div class="trust-item reveal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.6"/><path d="M12 7v5l4 2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg><span>30-day test ride</span></div>
+        <div class="trust-item reveal"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M4 17l4-9h8l4 9" stroke="currentColor" stroke-width="1.6" stroke-linejoin="round" stroke-linecap="round"/><circle cx="8" cy="18" r="2" stroke="currentColor" stroke-width="1.4"/><circle cx="16" cy="18" r="2" stroke="currentColor" stroke-width="1.4"/></svg><span>Carbon &amp; alloy builds</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="models" class="section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Shop the Collection</div>
+        <h2>Four builds. One obsession with detail.</h2>
+        <p>Every BYCYCLE frame is finished by hand in a matte-metallic black shell, then tuned for its terrain.</p>
+      </div>
+      <div class="models-grid stagger">
+
+        <div class="glass model-card reveal">
+          <span class="model-badge">Urban</span>
+          <div class="model-photo-wrap"><img class="model-photo" src="https://images.pexels.com/photos/12470022/pexels-photo-12470022.jpeg?w=600&q=80" alt="Blackline Urban" loading="lazy"></div>
+          <h3>Blackline Urban</h3>
+          <p>Nimble commuter build with upright geometry and puncture-resistant tires.</p>
+          <div class="model-price">$1,199 <span>Free shipping included</span></div>
+          <a href="product.html?id=urban" class="btn btn-ghost">View Model</a>
+        </div>
+
+        <div class="glass model-card reveal">
+          <span class="model-badge">Trail</span>
+          <div class="model-photo-wrap"><img class="model-photo" src="assets/trail/side_blue.jpg" alt="Blackline Trail" loading="lazy"></div>
+          <h3>Blackline Trail</h3>
+          <p>Wide-tread suspension fork and reinforced frame for rough terrain.</p>
+          <div class="model-price">$1,799 <span>Free shipping included</span></div>
+          <a href="product.html?id=trail" class="btn btn-ghost">View Model</a>
+        </div>
+
+        <div class="glass model-card reveal">
+          <span class="model-badge">Race</span>
+          <div class="model-photo-wrap"><img class="model-photo" src="https://images.pexels.com/photos/11292520/pexels-photo-11292520.jpeg?w=600&q=80" alt="Blackline Race" loading="lazy"></div>
+          <h3>Blackline Race</h3>
+          <p>Aero-profile tubing and a stiff drivetrain built for competitive pace.</p>
+          <div class="model-price">$2,399 <span>Free shipping included</span></div>
+          <a href="product.html?id=race" class="btn btn-ghost">View Model</a>
+        </div>
+
+        <div class="glass model-card reveal">
+          <span class="model-badge">Fold</span>
+          <div class="model-photo-wrap"><img class="model-photo" src="https://images.pexels.com/photos/10963099/pexels-photo-10963099.jpeg?w=600&q=80" alt="Blackline Fold" loading="lazy"></div>
+          <h3>Blackline Fold</h3>
+          <p>Compact folding frame that fits in a trunk, a closet, or a train.</p>
+          <div class="model-price">$999 <span>Free shipping included</span></div>
+          <a href="product.html?id=fold" class="btn btn-ghost">View Model</a>
+        </div>
+
+      </div>
+
+      <div class="finish-strip reveal" style="margin-top:56px;">
+        <div class="finish-strip-head">
+          <h4>Real photographed finishes — not a filter</h4>
+          <p>Every swatch on the Trail is an actual studio photo of that color, so you see exactly what ships. <a href="product.html?id=trail">Try the customizer →</a></p>
+        </div>
+        <div class="finish-strip-row">
+          <a href="product.html?id=trail" class="finish-thumb"><img src="assets/trail/side_blue.jpg" alt="Blackline Trail — Cobalt Blue" loading="lazy"><span>Cobalt Blue</span></a>
+          <a href="product.html?id=trail" class="finish-thumb"><img src="assets/trail/side_orange.jpg" alt="Blackline Trail — Burnt Orange" loading="lazy"><span>Burnt Orange</span></a>
+          <a href="product.html?id=trail" class="finish-thumb"><img src="assets/trail/side_white.jpg" alt="Blackline Trail — Cloud White" loading="lazy"><span>Cloud White</span></a>
+          <a href="product.html?id=backcountry" class="finish-thumb"><img src="assets/trail/side_gray.jpg" alt="Blackline Backcountry — Graphite Grey" loading="lazy"><span>Graphite Grey</span></a>
+          <a href="product.html?id=backcountry" class="finish-thumb"><img src="assets/trail/side_green.jpg" alt="Blackline Backcountry — Volt Green" loading="lazy"><span>Volt Green</span></a>
+          <a href="product.html?id=backcountry" class="finish-thumb"><img src="assets/trail/side_limegreen_rack.jpg" alt="Blackline Backcountry — Trail Lime" loading="lazy"><span>Trail Lime</span></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Why BYCYCLE</div>
+        <h2>Built like it's the only bike you'll ever need.</h2>
+      </div>
+      <div class="why-grid">
+        <div class="why-item reveal"><div class="icon-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2l8 4v6c0 5.5-3.8 9-8 10-4.2-1-8-4.5-8-10V6l8-4z" stroke="currentColor" stroke-width="1.8"/></svg></div><h4>Aerospace-grade alloy</h4><p>6061 frames that shave weight without sacrificing stiffness.</p></div>
+        <div class="why-item reveal"><div class="icon-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/><path d="M12 2v4M12 18v4M4.9 4.9l2.8 2.8M16.3 16.3l2.8 2.8M2 12h4M18 12h4M4.9 19.1l2.8-2.8M16.3 7.7l2.8-2.8" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Precision-tuned gearing</h4><p>12-speed drivetrains calibrated for smooth, silent shifts.</p></div>
+        <div class="why-item reveal"><div class="icon-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 7v5l3 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Hydraulic disc brakes</h4><p>Consistent stopping power in rain, mud, or midday heat.</p></div>
+        <div class="why-item reveal"><div class="icon-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="8" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.8"/></svg></div><h4>Tubeless-ready wheels</h4><p>Lower rolling resistance and fewer flats, straight out of the box.</p></div>
+        <div class="why-item reveal"><div class="icon-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 12l4-8h8l4 8-4 8H8l-4-8z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></svg></div><h4>Hand-polished finish</h4><p>Every shell is metallic-black finished and inspected by hand.</p></div>
+        <div class="why-item reveal"><div class="icon-ring"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 6h16M4 12h16M4 18h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></div><h4>Lifetime frame warranty</h4><p>We stand behind every frame for as long as you own it.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="tech" class="section-alt">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Technology</div>
+        <h2>The spec sheet behind the shine.</h2>
+      </div>
+      <div class="tech-grid stagger">
+        <div class="glass spec-card reveal"><div class="spec-num">8.9kg</div><div class="spec-lbl">Frame weight</div></div>
+        <div class="glass spec-card reveal"><div class="spec-num">12-spd</div><div class="spec-lbl">Drivetrain</div></div>
+        <div class="glass spec-card reveal"><div class="spec-num">Hydraulic</div><div class="spec-lbl">Disc brakes</div></div>
+        <div class="glass spec-card reveal"><div class="spec-num">700c</div><div class="spec-lbl">Wheel size</div></div>
+        <div class="glass spec-card reveal"><div class="spec-num">PVD Black</div><div class="spec-lbl">Metallic finish</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="stats-band">
+    <div class="container">
+      <div class="stats-grid">
+        <div class="reveal"><div class="stat-num" data-count="50" data-suffix="K+">0</div><div class="stat-lbl">Riders worldwide</div></div>
+        <div class="reveal"><div class="stat-num" data-count="4.9" data-suffix="/5" data-decimal="1">0</div><div class="stat-lbl">Average rating</div></div>
+        <div class="reveal"><div class="stat-num" data-count="32" data-suffix="">0</div><div class="stat-lbl">Countries shipped</div></div>
+        <div class="reveal"><div class="stat-num" data-count="4" data-suffix="">0</div><div class="stat-lbl">Models available</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reviews">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow" style="justify-content:center;">Reviews</div>
+        <h2>Riders don't go back to stock bikes.</h2>
+      </div>
+      <div class="reviews-track stagger">
+        <div class="glass review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">The metallic finish looks even better in person, and the ride is noticeably smoother than my old alloy bike.</p>
+          <div class="review-person"><span class="name">Arjun Mehta</span><span class="role">Blackline Urban owner</span></div>
+        </div>
+        <div class="glass review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">Took the Trail build through two monsoons. The disc brakes never let me down once.</p>
+          <div class="review-person"><span class="name">Sara Lindqvist</span><span class="role">Blackline Trail owner</span></div>
+        </div>
+        <div class="glass review-card reveal">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-quote">Shaved four minutes off my usual loop the first week. This is the fastest bike I've owned.</p>
+          <div class="review-person"><span class="name">Daniel Osei</span><span class="role">Blackline Race owner</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="cta">
+    <div class="container">
+      <div class="glass cta-panel reveal-scale">
+        <div class="eyebrow" style="justify-content:center;">Get 10% Off</div>
+        <h2>Your first ride is on us.</h2>
+        <p>Join the list for early access to new drops, ride guides, and a 10% welcome code.</p>
+        <form class="cta-form" action="https://formsubmit.co/purchase@bycycle.com" method="POST">
+          <input type="hidden" name="_subject" value="New BYCYCLE newsletter signup">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="email" name="Email" placeholder="you@email.com" required aria-label="Email address">
+          <button type="submit" class="btn btn-primary">Subscribe</button>
+        </form>
+        <p class="cta-note">Or reach us directly at <a href="mailto:purchase@bycycle.com" style="color:var(--text-muted);">purchase@bycycle.com</a> or <a href="tel:+14155550142" style="color:var(--text-muted);">+1 (415) 555-0142</a></p>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <div class="footer-top">
+      <div class="footer-brand">
+        <a href="#hero" class="logo">BYCYCLE<span>.</span></a>
+        <p>Precision bicycles with aerospace-grade alloy frames and a hand-finished metallic black shell.</p>
+        <div class="footer-social">
+          <a href="mailto:purchase@bycycle.com" aria-label="Email"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><path d="M4 7l8 6 8-6" stroke="currentColor" stroke-width="1.6"/></svg></a>
+          <a href="#" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none"><rect x="3" y="3" width="18" height="18" rx="5" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="4" stroke="currentColor" stroke-width="1.6"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+        </div>
+      </div>
+      <div class="footer-col">
+        <h5>Shop</h5>
+        <ul><li><a href="product.html?id=urban">Urban</a></li><li><a href="product.html?id=trail">Trail</a></li><li><a href="product.html?id=race">Race</a></li><li><a href="product.html?id=fold">Fold</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Company</h5>
+        <ul><li><a href="#why">Why Us</a></li><li><a href="#tech">Technology</a></li><li><a href="contact.html">Contact</a></li></ul>
+      </div>
+      <div class="footer-col">
+        <h5>Support</h5>
+        <ul><li><a href="mailto:purchase@bycycle.com">purchase@bycycle.com</a></li><li><a href="tel:+14155550142">+1 (415) 555-0142</a></li><li><a href="cart.html">Your Cart</a></li></ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>© 2026 BYCYCLE. All rights reserved.</p>
+      <div class="legal"><a href="#">Privacy Policy</a><a href="#">Terms of Service</a></div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="cart.js"></script>
+<script>
+(function(){
+  "use strict";
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  /* ---------- SHARED SCROLL STATE ---------- */
+  var scrollY = 0, targetScrollY = 0;
+  var nav = document.getElementById('nav');
+  var navToggle = document.getElementById('navToggle');
+  var mobilePanel = document.getElementById('mobilePanel');
+  var scrollTicking = false;
+  window.addEventListener('scroll', function(){
+    targetScrollY = window.scrollY;
+    if(scrollTicking) return;
+    scrollTicking = true;
+    requestAnimationFrame(function(){
+      if(targetScrollY > 40){ nav.classList.add('scrolled'); } else { nav.classList.remove('scrolled'); }
+      scrollTicking = false;
+    });
+  }, {passive:true});
+
+  navToggle.addEventListener('click', function(){
+    var open = mobilePanel.classList.toggle('open');
+    navToggle.classList.toggle('open', open);
+    navToggle.setAttribute('aria-expanded', open);
+  });
+  mobilePanel.querySelectorAll('a').forEach(function(a){
+    a.addEventListener('click', function(){
+      mobilePanel.classList.remove('open'); navToggle.classList.remove('open');
+      navToggle.setAttribute('aria-expanded','false');
+    });
+  });
+
+  /* ---------- SCROLL REVEAL ---------- */
+  var revealEls = document.querySelectorAll('.reveal, .reveal-scale');
+  var io = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){ if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); } });
+  }, {threshold:0.15, rootMargin:'0px 0px -60px 0px'});
+  revealEls.forEach(function(el){ io.observe(el); });
+
+  /* ---------- STAT COUNTERS ---------- */
+  var counters = document.querySelectorAll('.stat-num');
+  var counted = new WeakSet();
+  var cio = new IntersectionObserver(function(entries){
+    entries.forEach(function(e){
+      if(e.isIntersecting && !counted.has(e.target)){
+        counted.add(e.target);
+        animateCount(e.target);
+      }
+    });
+  }, {threshold:0.4});
+  counters.forEach(function(el){ cio.observe(el); });
+
+  function animateCount(el){
+    var target = parseFloat(el.getAttribute('data-count'));
+    var suffix = el.getAttribute('data-suffix') || '';
+    var decimals = parseInt(el.getAttribute('data-decimal') || '0', 10);
+    var dur = reduceMotion ? 1 : 1500;
+    var start = null;
+    function step(ts){
+      if(!start) start = ts;
+      var p = Math.min((ts-start)/dur, 1);
+      var eased = 1 - Math.pow(1-p, 3);
+      var val = target * eased;
+      el.textContent = (decimals ? val.toFixed(decimals) : Math.round(val)) + suffix;
+      if(p < 1) requestAnimationFrame(step);
+    }
+    requestAnimationFrame(step);
+  }
+
+  /* ---------- TILT ON MODEL CARDS ---------- */
+  if(!reduceMotion){
+    document.querySelectorAll('.model-card').forEach(function(card){
+      card.addEventListener('mousemove', function(e){
+        var r = card.getBoundingClientRect();
+        var x = (e.clientX - r.left)/r.width - 0.5;
+        var y = (e.clientY - r.top)/r.height - 0.5;
+        card.style.transform = 'perspective(700px) rotateX(' + (-y*5) + 'deg) rotateY(' + (x*5) + 'deg) translateY(-4px)';
+      });
+      card.addEventListener('mouseleave', function(){ card.style.transform = ''; });
+    });
+  }
+
+  /* ================= THREE.JS: METALLIC BIKE ================= */
+  if(typeof THREE === 'undefined'){ return; }
+
+  var canvas = document.getElementById('bike-canvas');
+  if(!canvas) return;
+
+  var scene = new THREE.Scene();
+  var camera = new THREE.PerspectiveCamera(45, window.innerWidth/window.innerHeight, 0.1, 100);
+  camera.position.set(0, 0, 9);
+
+  var renderer = new THREE.WebGLRenderer({canvas:canvas, alpha:true, antialias:true, powerPreference:'high-performance'});
+  renderer.setPixelRatio(Math.min(window.devicePixelRatio, 1.5));
+  function sizeToViewport(){
+    var w = window.innerWidth, h = window.innerHeight;
+    renderer.setSize(w, h, false);
+    camera.aspect = w/h;
+    camera.updateProjectionMatrix();
+  }
+  sizeToViewport();
+
+  /* ---- lighting ---- */
+  scene.add(new THREE.AmbientLight(0x50525a, 0.55));
+  var key = new THREE.DirectionalLight(0xffffff, 1.3);
+  key.position.set(4, 6, 6);
+  scene.add(key);
+  var rimLight = new THREE.PointLight(0xB6FF3C, 0.7, 24);
+  rimLight.position.set(-4, -1.5, 4);
+  scene.add(rimLight);
+  var fillLight = new THREE.PointLight(0x7C90FF, 0.35, 24);
+  fillLight.position.set(3, -3, -3);
+  scene.add(fillLight);
+
+  /* ---- fake environment for metallic reflections ---- */
+  (function buildEnv(){
+    try{
+      var pmrem = new THREE.PMREMGenerator(renderer);
+      pmrem.compileEquirectangularShader();
+      var gc = document.createElement('canvas');
+      gc.width = 16; gc.height = 256;
+      var ctx = gc.getContext('2d');
+      var grad = ctx.createLinearGradient(0,0,0,256);
+      grad.addColorStop(0,   '#4b4f5a');
+      grad.addColorStop(0.35,'#20222a');
+      grad.addColorStop(0.65,'#14151a');
+      grad.addColorStop(1,   '#050506');
+      ctx.fillStyle = grad;
+      ctx.fillRect(0,0,16,256);
+      var envTex = new THREE.CanvasTexture(gc);
+      envTex.mapping = THREE.EquirectangularReflectionMapping;
+      var envRT = pmrem.fromEquirectangular(envTex);
+      scene.environment = envRT.texture;
+      envTex.dispose();
+      pmrem.dispose();
+    }catch(e){ /* environment reflections are a nice-to-have; fail silently */ }
+  })();
+
+  /* ---- materials ---- */
+  var metalMat = new THREE.MeshStandardMaterial({color:0x121214, metalness:1, roughness:0.32, envMapIntensity:1.25});
+  var rimMat   = new THREE.MeshStandardMaterial({color:0x24252a, metalness:1, roughness:0.22, envMapIntensity:1.25});
+  var voltMat  = new THREE.MeshStandardMaterial({color:0xB6FF3C, metalness:0.4, roughness:0.4, emissive:0x2a3d0a, emissiveIntensity:0.4});
+
+  function tubeBetween(a, b, radius, mat){
+    var dir = new THREE.Vector3().subVectors(b, a);
+    var len = dir.length();
+    var geo = new THREE.CylinderGeometry(radius, radius, len, 8, 1);
+    var mesh = new THREE.Mesh(geo, mat);
+    mesh.position.copy(a).add(dir.clone().multiplyScalar(0.5));
+    var quat = new THREE.Quaternion().setFromUnitVectors(new THREE.Vector3(0,1,0), dir.clone().normalize());
+    mesh.quaternion.copy(quat);
+    return mesh;
+  }
+  // aero tube: same as tubeBetween but with a flattened, wing-like cross-section
+  function aeroTubeBetween(a, b, radius, mat, flatten){
+    var mesh = tubeBetween(a, b, radius, mat);
+    var f = flatten || 0.55;
+    mesh.scale.set(1.7, 1, f);
+    return mesh;
+  }
+  // curved drop handlebar half, built from a hand-placed curve
+  function buildDropBar(stem, side, faceDir, mat){
+    var pts = [
+      stem.clone().add(new THREE.Vector3(0, 0.01, side*0.03)),
+      stem.clone().add(new THREE.Vector3(faceDir*0.02, 0.03, side*0.22)),
+      stem.clone().add(new THREE.Vector3(faceDir*0.15, 0.03, side*0.27)),
+      stem.clone().add(new THREE.Vector3(faceDir*0.23, -0.11, side*0.265)),
+      stem.clone().add(new THREE.Vector3(faceDir*0.155, -0.25, side*0.255))
+    ];
+    var curve = new THREE.CatmullRomCurve3(pts);
+    var geo = new THREE.TubeGeometry(curve, 24, 0.022, 8, false);
+    return new THREE.Mesh(geo, mat);
+  }
+
+  /* ---- build the bicycle (mirrored to face left, aero road-bike proportions) ---- */
+  var bikeGroup = new THREE.Group();
+  var wheels = [];
+
+  var rearAxle  = new THREE.Vector3( 1.4, -0.85, 0);
+  var frontAxle = new THREE.Vector3(-1.4, -0.85, 0);
+  var bb        = new THREE.Vector3( 0.0, -0.55, 0);
+  var seatTop   = new THREE.Vector3( 0.15, 0.85, 0);
+  var headTop   = new THREE.Vector3(-1.05, 0.7, 0);
+  var wheelR = 1.0;
+  var faceDir = Math.sign(headTop.x - bb.x); // -1 = bike faces left
+
+  [rearAxle, frontAxle].forEach(function(center){
+    var wheelGroup = new THREE.Group();
+    wheelGroup.add(new THREE.Mesh(new THREE.TorusGeometry(wheelR, 0.13, 14, 44), metalMat));
+    wheelGroup.add(new THREE.Mesh(new THREE.SphereGeometry(0.09, 12, 12), rimMat));
+    // disc brake rotor
+    var rotor = new THREE.Mesh(new THREE.TorusGeometry(0.34, 0.02, 8, 28), rimMat);
+    rotor.position.z = 0.07;
+    wheelGroup.add(rotor);
+    var spokeCount = 10;
+    for(var s=0; s<spokeCount; s++){
+      var ang = (s/spokeCount)*Math.PI*2;
+      var rim = new THREE.Vector3(Math.cos(ang)*wheelR, Math.sin(ang)*wheelR, 0);
+      wheelGroup.add(tubeBetween(new THREE.Vector3(0,0,0), rim, 0.017, rimMat));
+    }
+    wheelGroup.position.copy(center);
+    bikeGroup.add(wheelGroup);
+    wheels.push(wheelGroup);
+  });
+
+  bikeGroup.add(aeroTubeBetween(bb, seatTop, 0.06, metalMat, 0.5));       // seat tube
+  bikeGroup.add(aeroTubeBetween(seatTop, headTop, 0.05, metalMat, 0.6)); // top tube
+  bikeGroup.add(aeroTubeBetween(bb, headTop, 0.065, metalMat, 0.5));     // down tube
+  bikeGroup.add(aeroTubeBetween(bb, rearAxle, 0.04, metalMat, 0.7));     // chain stay
+  bikeGroup.add(aeroTubeBetween(seatTop, rearAxle, 0.04, metalMat, 0.7));// seat stay
+  bikeGroup.add(aeroTubeBetween(headTop, frontAxle, 0.05, metalMat, 0.6));// fork
+
+  // volt accent stripe along the down tube
+  var stripe = aeroTubeBetween(
+    bb.clone().lerp(headTop, 0.15), bb.clone().lerp(headTop, 0.75), 0.02, voltMat, 0.4
+  );
+  bikeGroup.add(stripe);
+
+  var seatPostTop = seatTop.clone().add(new THREE.Vector3(faceDir*0.05, 0.26, 0));
+  bikeGroup.add(tubeBetween(seatTop, seatPostTop, 0.03, rimMat));
+  var saddle = new THREE.Mesh(new THREE.BoxGeometry(0.42, 0.07, 0.16), metalMat);
+  saddle.position.copy(seatPostTop).add(new THREE.Vector3(-faceDir*0.08, 0.04, 0));
+  saddle.rotation.z = faceDir*0.05;
+  bikeGroup.add(saddle);
+
+  var stemTop = headTop.clone().add(new THREE.Vector3(-faceDir*0.04, 0.3, 0));
+  bikeGroup.add(tubeBetween(headTop, stemTop, 0.035, rimMat));
+  bikeGroup.add(buildDropBar(stemTop,  1, faceDir, metalMat));
+  bikeGroup.add(buildDropBar(stemTop, -1, faceDir, metalMat));
+  var barCenter = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, 0.5, 8), rimMat);
+  barCenter.rotation.z = Math.PI/2;
+  barCenter.position.copy(stemTop).add(new THREE.Vector3(0, 0.02, 0));
+  bikeGroup.add(barCenter);
+
+  var chainring = new THREE.Mesh(new THREE.TorusGeometry(0.29, 0.038, 10, 28), metalMat);
+  chainring.position.copy(bb);
+  bikeGroup.add(chainring);
+  var chainringSmall = new THREE.Mesh(new THREE.TorusGeometry(0.21, 0.03, 10, 24), rimMat);
+  chainringSmall.position.copy(bb).add(new THREE.Vector3(0,0,0.03));
+  bikeGroup.add(chainringSmall);
+  var crankL = bb.clone().add(new THREE.Vector3(0, -0.28, 0.15));
+  var crankR = bb.clone().add(new THREE.Vector3(0,  0.28, -0.15));
+  bikeGroup.add(tubeBetween(bb, crankL, 0.032, rimMat));
+  bikeGroup.add(tubeBetween(bb, crankR, 0.032, rimMat));
+  var pedalGeo = new THREE.BoxGeometry(0.17, 0.03, 0.12);
+  var pedalL = new THREE.Mesh(pedalGeo, rimMat); pedalL.position.copy(crankL); bikeGroup.add(pedalL);
+  var pedalR = new THREE.Mesh(pedalGeo, rimMat); pedalR.position.copy(crankR); bikeGroup.add(pedalR);
+
+  var cassette = new THREE.Mesh(new THREE.CylinderGeometry(0.15, 0.15, 0.13, 20), rimMat);
+  cassette.rotation.x = Math.PI/2;
+  cassette.position.copy(rearAxle);
+  bikeGroup.add(cassette);
+
+  // small volt accent — valve caps
+  [rearAxle, frontAxle].forEach(function(center){
+    var valve = new THREE.Mesh(new THREE.SphereGeometry(0.045, 8, 8), voltMat);
+    valve.position.set(center.x, center.y + wheelR, center.z);
+    bikeGroup.add(valve);
+  });
+
+  bikeGroup.scale.setScalar(1.35);
+  scene.add(bikeGroup);
+
+  /* ---- extra decorative metallic elements ---- */
+  var decorTorus = new THREE.Mesh(new THREE.TorusGeometry(0.5, 0.07, 12, 36), rimMat);
+  decorTorus.position.set(3.4, 2.3, -1.5);
+  decorTorus.rotation.x = 0.6;
+  scene.add(decorTorus);
+
+  var decorIco = new THREE.Mesh(new THREE.IcosahedronGeometry(0.36, 0), metalMat);
+  decorIco.position.set(-3.3, -2.6, -1.2);
+  scene.add(decorIco);
+
+  /* ---- scroll-driven zigzag that touches the right edge, then the left edge ---- */
+  var clock = new THREE.Clock();
+  var ZIGZAGS = 5;      // number of full right<->left swings down the page
+  var TOP_Y = 2.4;
+  var BOTTOM_Y = -2.9;
+  var edgeAmplitude = 2.2;
+
+  // work out how far the bike can travel before it actually reaches the
+  // screen edges, based on the real viewport size and camera FOV
+  function computeEdgeAmplitude(){
+    var aspect = window.innerWidth / window.innerHeight;
+    var camDist = camera.position.z;
+    var halfHeight = camDist * Math.tan(THREE.MathUtils.degToRad(camera.fov/2));
+    var halfWidth = halfHeight * aspect;
+    var bikeHalfWidth = 1.35 * 1.45; // approx half wheelbase after bikeGroup.scale
+    edgeAmplitude = Math.max(1.2, halfWidth - bikeHalfWidth);
+  }
+  computeEdgeAmplitude();
+
+  var rafId = null;
+  function renderFrame(){
+    var t = clock.getElapsedTime();
+    scrollY += (targetScrollY - scrollY) * 0.09;
+    var docH = Math.max(document.documentElement.scrollHeight - window.innerHeight, 1);
+    var progress = Math.min(Math.max(scrollY / docH, 0), 1);
+    var phase = progress * ZIGZAGS * Math.PI * 2;
+
+    // cos() so it starts touching the right edge at the very top of the page
+    bikeGroup.position.y = TOP_Y + (BOTTOM_Y - TOP_Y) * progress;
+    bikeGroup.position.x = Math.cos(phase) * edgeAmplitude;
+    bikeGroup.rotation.y = -0.5 - Math.sin(phase) * 0.3;   // turns to face travel direction
+    bikeGroup.rotation.z = -Math.sin(phase) * 0.09;         // banks into each turn
+
+    wheels.forEach(function(w){ w.rotation.z -= 0.045; });
+
+    decorTorus.rotation.y = t*0.3;
+    decorTorus.rotation.x = 0.6 + Math.sin(t*0.4)*0.1;
+    decorTorus.position.y = 2.3 - progress*1.6;
+    decorIco.rotation.x = t*0.35;
+    decorIco.rotation.y = t*0.25;
+    decorIco.position.y = -2.6 + progress*1.2;
+
+    renderer.render(scene, camera);
+  }
+
+  function loop(){ renderFrame(); rafId = requestAnimationFrame(loop); }
+  function startLoop(){ if(!rafId && !reduceMotion){ rafId = requestAnimationFrame(loop); } }
+  function stopLoop(){ if(rafId){ cancelAnimationFrame(rafId); rafId = null; } }
+
+  document.addEventListener('visibilitychange', function(){
+    if(document.hidden) stopLoop(); else startLoop();
+  });
+
+  if(!reduceMotion){ startLoop(); } else { renderFrame(); }
+
+  var resizeTimer;
+  window.addEventListener('resize', function(){
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function(){ sizeToViewport(); computeEdgeAmplitude(); }, 150);
+  });
+
+})();
+</script>
+<script>if(window.Cart){ Cart.updateBadge(); }</script>
+</body>
+</html>
