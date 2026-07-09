@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<meta charset=\"UTF-8\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+<title>FASHES — Timeless Swiss Craftsmanship</title>
+<meta name=\"description\" content=\"Fashes Watches — hand-assembled Swiss timepieces engineered for those who measure life in moments.\" />
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
+<link href=\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap\" rel=\"stylesheet\" />
+<link rel=\"stylesheet\" href=\"css/style.css\" />
+</head>
+<body>
+
+<!-- NAV -->
+<nav class=\"nav\" data-testid=\"site-nav\">
+  <a href=\"index.html\" class=\"brand\" data-testid=\"brand-link\">FASHES<span>.</span></a>
+  <div class=\"nav-links\">
+    <a href=\"index.html\" class=\"active\" data-testid=\"nav-home\">Home</a>
+    <a href=\"shop.html\" data-testid=\"nav-shop\">Collection</a>
+    <a href=\"about.html\" data-testid=\"nav-about\">Heritage</a>
+    <a href=\"contact.html\" data-testid=\"nav-contact\">Contact</a>
+  </div>
+  <div class=\"nav-cta\">
+    <a href=\"cart.html\" class=\"cart-icon\" data-testid=\"nav-cart\">Cart <span class=\"cart-count\">0</span></a>
+  </div>
+</nav>
+
+<!-- Fixed Three.js watch -->
+<canvas id=\"watch-canvas\" data-testid=\"watch-canvas\"></canvas>
+
+<!-- HERO -->
+<section class=\"hero\" data-testid=\"hero-section\">
+  <div class=\"hero-inner\">
+    <div class=\"eyebrow\" data-reveal>Swiss Made · Est. 1927</div>
+    <h1 class=\"hero-title\" data-reveal>
+      Time,<br />
+      <em>reimagined</em><br />
+      in gold.
+    </h1>
+    <p class=\"hero-sub\" data-reveal>
+      Every Fashes timepiece is hand-assembled by a single master watchmaker across
+      forty-two days — a quiet act of resistance against a world in a hurry.
+    </p>
+    <div class=\"hero-meta\" data-reveal>
+      <div><strong>42</strong><span>Days to build</span></div>
+      <div><strong>128</strong><span>Moving parts</span></div>
+      <div><strong>1927</strong><span>Founded in Geneva</span></div>
+    </div>
+  </div>
+  <div class=\"scroll-hint\">Scroll to discover</div>
+</section>
+
+<!-- Scroll story sections that flow past the 3D watch -->
+<div class=\"scroll-sections\">
+  <section class=\"scroll-section\" data-testid=\"story-1\">
+    <div class=\"content\" data-scroll-reveal>
+      <div class=\"kicker\">Chapter One</div>
+      <h2>The dial is<br /><em>a canvas</em>.</h2>
+      <p>
+        Each face is finished by hand across seven stages — sunburst brushing,
+        applied gold indices, and lacquer applied so thinly that light appears to
+        rest inside the metal rather than upon it.
+      </p>
+    </div>
+  </section>
+
+  <section class=\"scroll-section right\" data-testid=\"story-2\">
+    <div class=\"content\" data-scroll-reveal>
+      <div class=\"kicker\">Chapter Two</div>
+      <h2>A movement<br /><em>you can feel</em>.</h2>
+      <p>
+        Our in-house caliber F27 beats at 28,800 vph and holds power for five days.
+        You will never wind it in a hurry. That is by design.
+      </p>
+    </div>
+  </section>
+
+  <section class=\"scroll-section\" data-testid=\"story-3\">
+    <div class=\"content\" data-scroll-reveal>
+      <div class=\"kicker\">Chapter Three</div>
+      <h2>Owned<br /><em>for generations</em>.</h2>
+      <p>
+        A Fashes watch is not an accessory. It is a small, quiet inheritance —
+        passed from a hand that knew you to one that will remember you.
+      </p>
+      <div style=\"margin-top:36px;display:flex;gap:14px;flex-wrap:wrap\">
+        <a href=\"shop.html\" class=\"btn btn-gold\" data-testid=\"hero-shop-btn\">Explore Collection <span class=\"arrow\">→</span></a>
+        <a href=\"about.html\" class=\"btn btn-ghost\" data-testid=\"hero-story-btn\">Our Heritage</a>
+      </div>
+    </div>
+  </section>
+</div>
+
+<!-- FEATURED COLLECTION -->
+<section class=\"section\" style=\"position:relative;z-index:2;background:var(--bg)\" data-testid=\"featured-section\">
+  <div class=\"section-head\">
+    <h2 data-parallax>Featured<br /><em>Timepieces</em></h2>
+    <div class=\"side\">Four references from our current collection — each a starting point for a longer story.</div>
+  </div>
+  <div class=\"grid\">
+    <a href=\"product.html?id=noir\" class=\"card\" data-testid=\"card-noir\">
+      <div class=\"thumb\">
+        <svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#d4af37\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#1a1512\" stroke=\"#e8c766\" stroke-width=\"1\"/><g stroke=\"#d4af37\" stroke-width=\"3\" stroke-linecap=\"round\"><line x1=\"100\" y1=\"40\" x2=\"100\" y2=\"52\"/><line x1=\"160\" y1=\"100\" x2=\"148\" y2=\"100\"/><line x1=\"100\" y1=\"160\" x2=\"100\" y2=\"148\"/><line x1=\"40\" y1=\"100\" x2=\"52\" y2=\"100\"/></g><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"55\" stroke=\"#f5f1e6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"100\" y1=\"100\" x2=\"130\" y2=\"100\" stroke=\"#e8c766\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#d4af37\"/></svg>
+      </div>
+      <div class=\"cat\">Signature</div>
+      <div class=\"name\">Noir Éclat 40</div>
+      <div class=\"desc\">Onyx dial, rose-gold indices, alligator strap.</div>
+      <div class=\"price-row\"><span class=\"price\">$14,800</span><span class=\"view\">View →</span></div>
+    </a>
+    <a href=\"product.html?id=heritage\" class=\"card\" data-testid=\"card-heritage\">
+      <div class=\"thumb\">
+        <svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#e8c766\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#0e0c08\" stroke=\"#d4af37\" stroke-width=\"1\"/><g stroke=\"#d4af37\" stroke-width=\"2\" stroke-linecap=\"round\"><line x1=\"100\" y1=\"42\" x2=\"100\" y2=\"54\"/><line x1=\"158\" y1=\"100\" x2=\"146\" y2=\"100\"/><line x1=\"100\" y1=\"158\" x2=\"100\" y2=\"146\"/><line x1=\"42\" y1=\"100\" x2=\"54\" y2=\"100\"/></g><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"60\" stroke=\"#e8c766\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"100\" y1=\"100\" x2=\"135\" y2=\"115\" stroke=\"#f5f1e6\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#d4af37\"/></svg>
+      </div>
+      <div class=\"cat\">Heritage</div>
+      <div class=\"name\">Heritage 1927</div>
+      <div class=\"desc\">Sunburst champagne dial, 18k gold case.</div>
+      <div class=\"price-row\"><span class=\"price\">$22,400</span><span class=\"view\">View →</span></div>
+    </a>
+    <a href=\"product.html?id=marine\" class=\"card\" data-testid=\"card-marine\">
+      <div class=\"thumb\">
+        <svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#d4af37\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#0a1220\" stroke=\"#e8c766\" stroke-width=\"1\"/><g stroke=\"#e8c766\" stroke-width=\"2\" stroke-linecap=\"round\"><line x1=\"100\" y1=\"44\" x2=\"100\" y2=\"56\"/><line x1=\"156\" y1=\"100\" x2=\"144\" y2=\"100\"/><line x1=\"100\" y1=\"156\" x2=\"100\" y2=\"144\"/><line x1=\"44\" y1=\"100\" x2=\"56\" y2=\"100\"/></g><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"58\" stroke=\"#f5f1e6\" stroke-width=\"3\" stroke-linecap=\"round\"/><line x1=\"100\" y1=\"100\" x2=\"125\" y2=\"90\" stroke=\"#d4af37\" stroke-width=\"2\" stroke-linecap=\"round\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#e8c766\"/></svg>
+      </div>
+      <div class=\"cat\">Marine</div>
+      <div class=\"name\">Marine Chronographe</div>
+      <div class=\"desc\">Midnight blue dial, 300m water resistant.</div>
+      <div class=\"price-row\"><span class=\"price\">$9,900</span><span class=\"view\">View →</span></div>
+    </a>
+  </div>
+</section>
+
+<!-- CTA STRIP -->
+<section style=\"position:relative;z-index:2;padding:120px 48px;text-align:center;background:linear-gradient(to bottom,#0a0a0a,#050505)\" data-testid=\"cta-strip\">
+  <div class=\"kicker\" style=\"font-size:11px;letter-spacing:.4em;color:var(--gold);text-transform:uppercase;margin-bottom:24px\">Private atelier</div>
+  <h2 style=\"font-family:var(--serif);font-size:clamp(40px,6vw,88px);font-weight:400;line-height:1;max-width:900px;margin:0 auto 28px\">Every piece, <em style=\"font-style:italic;color:var(--gold);font-weight:300\">made for one</em>.</h2>
+  <p style=\"max-width:520px;margin:0 auto 40px;color:var(--ink-dim);line-height:1.75\">Bespoke commissions available upon request. Our atelier serves fifty clients each year.</p>
+  <a href=\"contact.html\" class=\"btn btn-gold\" data-testid=\"cta-commission\">Request a Commission <span class=\"arrow\">→</span></a>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class=\"foot-grid\">
+    <div>
+      <div class=\"foot-brand\">FASHES<span>.</span></div>
+      <p class=\"foot-about\">Independent Swiss watchmaker crafting mechanical timepieces since 1927. Rue du Rhône, Geneva.</p>
+    </div>
+    <div class=\"foot-col\"><h5>Explore</h5><ul>
+      <li><a href=\"shop.html\">Collection</a></li>
+      <li><a href=\"about.html\">Heritage</a></li>
+      <li><a href=\"contact.html\">Atelier</a></li>
+      <li><a href=\"cart.html\">Cart</a></li>
+    </ul></div>
+    <div class=\"foot-col\"><h5>Service</h5><ul>
+      <li><a href=\"contact.html\">Concierge</a></li>
+      <li><a href=\"contact.html\">Servicing</a></li>
+      <li><a href=\"contact.html\">Warranty</a></li>
+    </ul></div>
+    <div class=\"foot-col\"><h5>Contact</h5><ul>
+      <li><a href=\"mailto:watches@fashes.com\">watches@fashes.com</a></li>
+      <li><a href=\"tel:+14155550142\">+1 (415) 555-0142</a></li>
+    </ul></div>
+  </div>
+  <div class=\"foot-bottom\">
+    <span>© 2026 Fashes Manufacture SA</span>
+    <span>Geneva · Zurich · New York</span>
+  </div>
+</footer>
+
+<script src=\"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js\"></script>
+<script src=\"js/watch3d.js\"></script>
+<script src=\"js/main.js\"></script>
+</body>
+</html>
+"
+Observation: Create successful: /app/frontend/public/watches/index.html
