@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<meta charset=\"UTF-8\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+<title>Timepiece — FASHES</title>
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
+<link href=\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap\" rel=\"stylesheet\" />
+<link rel=\"stylesheet\" href=\"css/style.css\" />
+</head>
+<body>
+
+<nav class=\"nav\">
+  <a href=\"index.html\" class=\"brand\">FASHES<span>.</span></a>
+  <div class=\"nav-links\">
+    <a href=\"index.html\">Home</a>
+    <a href=\"shop.html\" class=\"active\">Collection</a>
+    <a href=\"about.html\">Heritage</a>
+    <a href=\"contact.html\">Contact</a>
+  </div>
+  <div class=\"nav-cta\">
+    <a href=\"cart.html\" class=\"cart-icon\">Cart <span class=\"cart-count\">0</span></a>
+  </div>
+</nav>
+
+<section class=\"product-detail\" data-testid=\"product-detail\">
+  <div class=\"product-visual\" data-testid=\"product-visual\">
+    <canvas id=\"product-canvas\"></canvas>
+  </div>
+  <div class=\"product-info\">
+    <div class=\"cat\" id=\"p-cat\" data-reveal>Signature</div>
+    <h1 id=\"p-name\" data-reveal>Noir Éclat 40</h1>
+    <p class=\"lead\" id=\"p-lead\" data-reveal>A study in restraint — the Noir Éclat pairs a hand-lacquered onyx dial with 18k rose-gold indices, driven by our in-house F27 automatic movement with a 120-hour reserve.</p>
+    <div class=\"price\" id=\"p-price\" data-reveal>$14,800</div>
+
+    <dl class=\"spec-grid\" data-reveal>
+      <div><dt>Case</dt><dd id=\"p-case\">40mm · 18k Rose Gold</dd></div>
+      <div><dt>Movement</dt><dd id=\"p-mov\">F27 Automatic</dd></div>
+      <div><dt>Reserve</dt><dd id=\"p-res\">120 hours</dd></div>
+      <div><dt>Water Resistance</dt><dd id=\"p-wr\">50 meters</dd></div>
+      <div><dt>Crystal</dt><dd>Sapphire · anti-reflective</dd></div>
+      <div><dt>Strap</dt><dd id=\"p-strap\">Alligator · pin buckle</dd></div>
+    </dl>
+
+    <div class=\"qty-row\" data-reveal>
+      <div class=\"qty\" data-testid=\"qty-control\">
+        <button id=\"q-minus\" data-testid=\"qty-minus\">−</button>
+        <span id=\"q-val\" data-testid=\"qty-value\">1</span>
+        <button id=\"q-plus\" data-testid=\"qty-plus\">+</button>
+      </div>
+    </div>
+
+    <div class=\"action-row\" data-reveal>
+      <button class=\"btn btn-gold\" id=\"add-to-cart\" data-testid=\"add-to-cart-btn\">Add to Cart <span class=\"arrow\">→</span></button>
+      <a href=\"contact.html\" class=\"btn btn-ghost\" data-testid=\"private-viewing-btn\">Book Private Viewing</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class=\"foot-grid\">
+    <div><div class=\"foot-brand\">FASHES<span>.</span></div><p class=\"foot-about\">Independent Swiss watchmaker crafting mechanical timepieces since 1927. Rue du Rhône, Geneva.</p></div>
+    <div class=\"foot-col\"><h5>Explore</h5><ul><li><a href=\"shop.html\">Collection</a></li><li><a href=\"about.html\">Heritage</a></li><li><a href=\"contact.html\">Atelier</a></li><li><a href=\"cart.html\">Cart</a></li></ul></div>
+    <div class=\"foot-col\"><h5>Service</h5><ul><li><a href=\"contact.html\">Concierge</a></li><li><a href=\"contact.html\">Servicing</a></li><li><a href=\"contact.html\">Warranty</a></li></ul></div>
+    <div class=\"foot-col\"><h5>Contact</h5><ul><li><a href=\"mailto:watches@fashes.com\">watches@fashes.com</a></li><li><a href=\"tel:+14155550142\">+1 (415) 555-0142</a></li></ul></div>
+  </div>
+  <div class=\"foot-bottom\"><span>© 2026 Fashes Manufacture SA</span><span>Geneva · Zurich · New York</span></div>
+</footer>
+
+<script src=\"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js\"></script>
+<script src=\"js/main.js\"></script>
+<script>
+  // Product data
+  const PRODUCTS = {
+    noir:     { name:\"Noir Éclat 40\",       cat:\"Signature\", price:14800, mat:\"Onyx\",       case:\"40mm · 18k Rose Gold\",  strap:\"Alligator · pin buckle\",  mov:\"F27 Automatic\", res:\"120 hours\", wr:\"50 meters\", desc:\"A study in restraint — the Noir Éclat pairs a hand-lacquered onyx dial with 18k rose-gold indices, driven by our in-house F27 automatic movement.\" },
+    heritage: { name:\"Heritage 1927\",       cat:\"Heritage\",  price:22400, mat:\"Champagne\",  case:\"39mm · Yellow Gold\",    strap:\"Cognac leather\",          mov:\"F19 Manual\",    res:\"72 hours\",  wr:\"30 meters\", desc:\"A tribute to our founding year — sunburst champagne dial, dauphine hands and applied gold indices set within a solid 18k gold case.\" },
+    marine:   { name:\"Marine Chronographe\", cat:\"Marine\",    price:9900,  mat:\"Deep Blue\",  case:\"42mm · Steel\",          strap:\"Rubber tropic\",           mov:\"F34 Chrono\",    res:\"70 hours\",  wr:\"300 meters\", desc:\"Built for depth. The Marine Chronographe is a modern tool watch honed for the sea — luminous indices and a rotating gold bezel.\" },
+    lumiere:  { name:\"Lumière 32\",          cat:\"Ladies\",    price:18600, mat:\"Mother of Pearl\", case:\"32mm · Steel & Gold\", strap:\"Satin\",                mov:\"F22 Automatic\", res:\"50 hours\",  wr:\"30 meters\", desc:\"A shimmering mother-of-pearl dial framed by a hand-set diamond bezel. The Lumière brings light to the wrist.\" },
+    onyx:     { name:\"Onyx Perpetual\",      cat:\"Signature\", price:38200, mat:\"Onyx\",       case:\"41mm · White Gold\",     strap:\"Alligator · deployant\",   mov:\"F42 Perpetual\", res:\"96 hours\",  wr:\"30 meters\", desc:\"The perpetual calendar of Fashes — a mechanism that will require no correction until the year 2100.\" },
+    celeste:  { name:\"Céleste Tourbillon\",  cat:\"Heritage\",  price:68000, mat:\"Aventurine\", case:\"40mm · Platinum\",       strap:\"Alligator\",               mov:\"F60 Tourbillon\", res:\"80 hours\", wr:\"30 meters\", desc:\"A flying tourbillon suspended over a hand-set aventurine sky. Fewer than fifty are made each year.\" }
+  };
+
+  const id = new URLSearchParams(location.search).get(\"id\") || \"noir\";
+  const p = PRODUCTS[id] || PRODUCTS.noir;
+  document.getElementById(\"p-cat\").textContent = p.cat;
+  document.getElementById(\"p-name\").textContent = p.name;
+  document.getElementById(\"p-lead\").textContent = p.desc;
+  document.getElementById(\"p-price\").textContent = \"$\" + p.price.toLocaleString();
+  document.getElementById(\"p-case\").textContent = p.case;
+  document.getElementById(\"p-mov\").textContent = p.mov;
+  document.getElementById(\"p-res\").textContent = p.res;
+  document.getElementById(\"p-wr\").textContent = p.wr;
+  document.getElementById(\"p-strap\").textContent = p.strap;
+  document.title = p.name + \" — FASHES\";
+
+  // qty
+  let qty = 1;
+  const q = document.getElementById(\"q-val\");
+  document.getElementById(\"q-minus\").onclick = () => { qty = Math.max(1, qty-1); q.textContent = qty; };
+  document.getElementById(\"q-plus\").onclick = () => { qty = Math.min(9, qty+1); q.textContent = qty; };
+  document.getElementById(\"add-to-cart\").onclick = () => {
+    FASHES.addToCart({ id, name: p.name, price: p.price, cat: p.cat, qty });
+  };
+
+  // Three.js interactive product watch — rotate on drag
+  (function(){
+    const canvas = document.getElementById(\"product-canvas\");
+    const scene = new THREE.Scene();
+    const camera = new THREE.PerspectiveCamera(35, 1, 0.1, 100);
+    camera.position.z = 6;
+    const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+    function resize(){
+      const w = canvas.clientWidth, h = canvas.clientHeight;
+      renderer.setSize(w, h, false);
+      camera.aspect = w/h; camera.updateProjectionMatrix();
+    }
+    window.addEventListener(\"resize\", resize); resize();
+
+    scene.add(new THREE.AmbientLight(0xffffff, 0.6));
+    const l1 = new THREE.DirectionalLight(0xfff3d0, 1.2); l1.position.set(5,6,5); scene.add(l1);
+    const l2 = new THREE.DirectionalLight(0xd4af37, 0.9); l2.position.set(-4,-3,3); scene.add(l2);
+
+    const g = new THREE.Group(); scene.add(g);
+    const gold = new THREE.MeshStandardMaterial({ color:0xd4af37, metalness:1, roughness:0.22, emissive:0x1f1608, emissiveIntensity:0.35 });
+    g.add(new THREE.Mesh(new THREE.TorusGeometry(1.55, 0.16, 24, 96), gold));
+    const caseM = new THREE.Mesh(new THREE.CylinderGeometry(1.5, 1.5, 0.3, 96), new THREE.MeshStandardMaterial({ color:0x18130f, metalness:0.85, roughness:0.35 }));
+    caseM.rotation.x = Math.PI/2; g.add(caseM);
+
+    // Dial tinted per product
+    const tint = {
+      noir:\"#12100c\", heritage:\"#8a6b1e\", marine:\"#0f1e38\", lumiere:\"#f0e6d2\", onyx:\"#050403\", celeste:\"#141a2e\"
+    }[id] || \"#12100c\";
+
+    const size=512, c=document.createElement(\"canvas\"); c.width=c.height=size;
+    const ctx=c.getContext(\"2d\");
+    const grd=ctx.createRadialGradient(size/2,size/2,40,size/2,size/2,size/2);
+    grd.addColorStop(0, tint); grd.addColorStop(1,\"#050403\");
+    ctx.fillStyle=grd; ctx.beginPath(); ctx.arc(size/2,size/2,size/2,0,Math.PI*2); ctx.fill();
+    // markers
+    for(let i=0;i<12;i++){
+      const a=(i/12)*Math.PI*2-Math.PI/2;
+      ctx.strokeStyle= i%3===0?\"#e8c766\":\"#d4af37\"; ctx.lineWidth=i%3===0?7:4; ctx.lineCap=\"round\";
+      ctx.beginPath();
+      ctx.moveTo(size/2+Math.cos(a)*(size/2-40), size/2+Math.sin(a)*(size/2-40));
+      ctx.lineTo(size/2+Math.cos(a)*(size/2-70), size/2+Math.sin(a)*(size/2-70));
+      ctx.stroke();
+    }
+    ctx.fillStyle=\"#e8c766\"; ctx.font=\"500 30px 'Cormorant Garamond', serif\"; ctx.textAlign=\"center\"; ctx.textBaseline=\"middle\";
+    ctx.fillText(\"FASHES\", size/2, size/2-70);
+    ctx.font=\"300 14px 'Outfit', sans-serif\"; ctx.fillStyle=\"#a89f8a\";
+    ctx.fillText(p.mov.toUpperCase(), size/2, size/2-45);
+    const tex = new THREE.CanvasTexture(c);
+    const dial = new THREE.Mesh(new THREE.CircleGeometry(1.4, 96), new THREE.MeshStandardMaterial({ map: tex, metalness:0.4, roughness:0.55 }));
+    dial.position.z = 0.16; g.add(dial);
+
+    function hand(len, w, col, z){ const geo=new THREE.BoxGeometry(w,len,0.02); geo.translate(0,len/2-0.06,0); const m=new THREE.Mesh(geo,new THREE.MeshStandardMaterial({ color:col, metalness:1, roughness:0.25 })); m.position.z=z; return m; }
+    const hh = hand(0.75,0.09,0xe8c766,0.19), mh = hand(1.05,0.06,0xf5f1e6,0.21), sh=hand(1.15,0.02,0xd4af37,0.23);
+    g.add(hh,mh,sh);
+    g.add(new THREE.Mesh(new THREE.CylinderGeometry(0.08,0.08,0.04,32), gold).rotateX(Math.PI/2)).position.z=0.25;
+    const crown = new THREE.Mesh(new THREE.CylinderGeometry(0.12,0.14,0.2,24), gold);
+    crown.rotation.z = Math.PI/2; crown.position.set(1.72,0,0.05); g.add(crown);
+
+    // drag rotate
+    let dragging=false, lx=0, ly=0, rx=0.2, ry=-0.15;
+    canvas.style.pointerEvents=\"auto\"; canvas.style.cursor=\"grab\";
+    canvas.addEventListener(\"pointerdown\", e => { dragging=true; lx=e.clientX; ly=e.clientY; canvas.style.cursor=\"grabbing\"; });
+    window.addEventListener(\"pointerup\", ()=>{ dragging=false; canvas.style.cursor=\"grab\"; });
+    window.addEventListener(\"pointermove\", e => {
+      if(!dragging) return;
+      ry += (e.clientX-lx)*0.008; rx += (e.clientY-ly)*0.008;
+      lx=e.clientX; ly=e.clientY;
+    });
+
+    function tick(){
+      requestAnimationFrame(tick);
+      g.rotation.x += (rx - g.rotation.x)*0.08;
+      g.rotation.y += (ry - g.rotation.y)*0.08;
+      const now=new Date(), s=now.getSeconds()+now.getMilliseconds()/1000, mnts=now.getMinutes()+s/60, hrs=(now.getHours()%12)+mnts/60;
+      sh.rotation.z=-(s/60)*Math.PI*2; mh.rotation.z=-(mnts/60)*Math.PI*2; hh.rotation.z=-(hrs/12)*Math.PI*2;
+      renderer.render(scene,camera);
+    }
+    tick();
+    if(!dragging){ ry += 0.002; }
+  })();
+</script>
+</body>
+</html>
+"
+Observation: Create successful: /app/frontend/public/watches/product.html
