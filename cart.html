@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang=\"en\">
+<head>
+<meta charset=\"UTF-8\" />
+<meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\" />
+<title>Cart — FASHES</title>
+<link rel=\"preconnect\" href=\"https://fonts.googleapis.com\" />
+<link rel=\"preconnect\" href=\"https://fonts.gstatic.com\" crossorigin />
+<link href=\"https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Outfit:wght@300;400;500;600&display=swap\" rel=\"stylesheet\" />
+<link rel=\"stylesheet\" href=\"css/style.css\" />
+</head>
+<body class=\"no-3d\">
+
+<nav class=\"nav\">
+  <a href=\"index.html\" class=\"brand\">FASHES<span>.</span></a>
+  <div class=\"nav-links\">
+    <a href=\"index.html\">Home</a>
+    <a href=\"shop.html\">Collection</a>
+    <a href=\"about.html\">Heritage</a>
+    <a href=\"contact.html\">Contact</a>
+  </div>
+  <div class=\"nav-cta\">
+    <a href=\"cart.html\" class=\"cart-icon active\">Cart <span class=\"cart-count\">0</span></a>
+  </div>
+</nav>
+
+<section class=\"cart-wrap\" data-testid=\"cart-section\">
+  <div class=\"eyebrow\" data-reveal>Your selection</div>
+  <h1 data-reveal>The <em>cart</em>.</h1>
+
+  <div class=\"cart-grid\">
+    <div class=\"cart-items\" id=\"cart-items\" data-testid=\"cart-items\">
+      <!-- populated by JS -->
+    </div>
+
+    <aside class=\"cart-summary\" data-testid=\"cart-summary\">
+      <h4>Order summary</h4>
+      <div class=\"sum-row\"><span>Subtotal</span><span id=\"s-sub\">$0</span></div>
+      <div class=\"sum-row\"><span>Shipping</span><span>Complimentary</span></div>
+      <div class=\"sum-row\"><span>VAT (est.)</span><span id=\"s-vat\">$0</span></div>
+      <div class=\"sum-row total\"><span>Total</span><span id=\"s-tot\">$0</span></div>
+      <div style=\"margin-top:32px;display:flex;flex-direction:column;gap:12px\">
+        <button class=\"btn btn-gold\" id=\"checkout-btn\" data-testid=\"checkout-btn\">Proceed to Checkout <span class=\"arrow\">→</span></button>
+        <a href=\"shop.html\" class=\"btn btn-ghost\" data-testid=\"continue-shopping\">Continue Browsing</a>
+      </div>
+      <p style=\"margin-top:28px;font-size:12px;color:var(--muted);line-height:1.7\">
+        Complimentary insured shipping worldwide. All timepieces ship with a two-year international warranty and a signed certificate from the atelier.
+      </p>
+    </aside>
+  </div>
+</section>
+
+<footer>
+  <div class=\"foot-grid\">
+    <div><div class=\"foot-brand\">FASHES<span>.</span></div><p class=\"foot-about\">Independent Swiss watchmaker crafting mechanical timepieces since 1927. Rue du Rhône, Geneva.</p></div>
+    <div class=\"foot-col\"><h5>Explore</h5><ul><li><a href=\"shop.html\">Collection</a></li><li><a href=\"about.html\">Heritage</a></li><li><a href=\"contact.html\">Atelier</a></li><li><a href=\"cart.html\">Cart</a></li></ul></div>
+    <div class=\"foot-col\"><h5>Service</h5><ul><li><a href=\"contact.html\">Concierge</a></li><li><a href=\"contact.html\">Servicing</a></li><li><a href=\"contact.html\">Warranty</a></li></ul></div>
+    <div class=\"foot-col\"><h5>Contact</h5><ul><li><a href=\"mailto:watches@fashes.com\">watches@fashes.com</a></li><li><a href=\"tel:+14155550142\">+1 (415) 555-0142</a></li></ul></div>
+  </div>
+  <div class=\"foot-bottom\"><span>© 2026 Fashes Manufacture SA</span><span>Geneva · Zurich · New York</span></div>
+</footer>
+
+<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js\"></script>
+<script src=\"https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js\"></script>
+<script src=\"js/main.js\"></script>
+<script>
+  const svgFor = {
+    noir:    '<svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#d4af37\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#1a1512\"/><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"55\" stroke=\"#f5f1e6\" stroke-width=\"3\"/><line x1=\"100\" y1=\"100\" x2=\"130\" y2=\"100\" stroke=\"#e8c766\" stroke-width=\"2\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#d4af37\"/></svg>',
+    heritage:'<svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#e8c766\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#0e0c08\"/><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"60\" stroke=\"#e8c766\" stroke-width=\"3\"/><line x1=\"100\" y1=\"100\" x2=\"135\" y2=\"115\" stroke=\"#f5f1e6\" stroke-width=\"2\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#d4af37\"/></svg>',
+    marine:  '<svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#d4af37\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#0a1220\"/><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"58\" stroke=\"#f5f1e6\" stroke-width=\"3\"/><line x1=\"100\" y1=\"100\" x2=\"125\" y2=\"90\" stroke=\"#d4af37\" stroke-width=\"2\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#e8c766\"/></svg>',
+    lumiere: '<svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"82\" fill=\"none\" stroke=\"#e8c766\" stroke-width=\"3\"/><circle cx=\"100\" cy=\"100\" r=\"66\" fill=\"#f5f1e6\"/><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"60\" stroke=\"#1a1512\" stroke-width=\"2\"/><circle cx=\"100\" cy=\"100\" r=\"3\" fill=\"#d4af37\"/></svg>',
+    onyx:    '<svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#d4af37\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#050403\"/><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"62\" stroke=\"#e8c766\" stroke-width=\"3\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#d4af37\"/></svg>',
+    celeste: '<svg viewBox=\"0 0 200 200\"><circle cx=\"100\" cy=\"100\" r=\"90\" fill=\"none\" stroke=\"#e8c766\" stroke-width=\"4\"/><circle cx=\"100\" cy=\"100\" r=\"72\" fill=\"#141a2e\"/><circle cx=\"100\" cy=\"100\" r=\"20\" fill=\"none\" stroke=\"#d4af37\" stroke-width=\"1\"/><line x1=\"100\" y1=\"100\" x2=\"100\" y2=\"55\" stroke=\"#f5f1e6\" stroke-width=\"3\"/><circle cx=\"100\" cy=\"100\" r=\"4\" fill=\"#e8c766\"/></svg>'
+  };
+
+  function render(){
+    const cart = FASHES.getCart();
+    const wrap = document.getElementById(\"cart-items\");
+    if (!cart.length){
+      wrap.innerHTML = '<div style=\"padding:48px;text-align:center;background:var(--bg-2);border:1px solid var(--line-2)\"><div style=\"font-family:var(--serif);font-size:28px;margin-bottom:12px\">Your cart is empty</div><p style=\"color:var(--ink-dim);margin-bottom:24px\">Discover our numbered timepieces.</p><a href=\"shop.html\" class=\"btn btn-gold\" data-testid=\"empty-shop-btn\">Explore Collection <span class=\"arrow\">→</span></a></div>';
+      document.getElementById(\"s-sub\").textContent = \"$0\";
+      document.getElementById(\"s-vat\").textContent = \"$0\";
+      document.getElementById(\"s-tot\").textContent = \"$0\";
+      document.getElementById(\"checkout-btn\").disabled = true;
+      document.getElementById(\"checkout-btn\").style.opacity = \".4\";
+      return;
+    }
+    wrap.innerHTML = cart.map(i => `
+      <div class=\"cart-item\" data-testid=\"cart-item-${i.id}\">
+        <div class=\"thumb-sm\">${svgFor[i.id] || svgFor.noir}</div>
+        <div class=\"info\">
+          <div class=\"cat\">${i.cat}</div>
+          <div class=\"n\">${i.name}</div>
+          <div class=\"p\">$${(i.price*i.qty).toLocaleString()} <span style=\"color:var(--muted);font-size:12px;letter-spacing:.2em;margin-left:12px\">× ${i.qty}</span></div>
+        </div>
+        <button class=\"rm\" data-id=\"${i.id}\" data-testid=\"remove-${i.id}\">Remove</button>
+      </div>`).join(\"\");
+
+    wrap.querySelectorAll(\".rm\").forEach(b => b.onclick = () => { FASHES.removeFromCart(b.dataset.id); render(); });
+
+    const sub = cart.reduce((a,b)=>a+b.price*b.qty,0);
+    const vat = Math.round(sub*0.08);
+    document.getElementById(\"s-sub\").textContent = \"$\" + sub.toLocaleString();
+    document.getElementById(\"s-vat\").textContent = \"$\" + vat.toLocaleString();
+    document.getElementById(\"s-tot\").textContent = \"$\" + (sub+vat).toLocaleString();
+  }
+  render();
+
+  document.getElementById(\"checkout-btn\").onclick = () => {
+    if (!FASHES.getCart().length) return;
+    // Simple simulated confirmation
+    const t = document.createElement(\"div\");
+    t.style.cssText = \"position:fixed;inset:0;background:rgba(5,5,5,.92);backdrop-filter:blur(20px);z-index:10001;display:flex;align-items:center;justify-content:center;padding:24px\";
+    t.innerHTML = `<div style=\"max-width:520px;text-align:center;padding:56px 40px;background:var(--bg-2);border:1px solid var(--line)\">
+      <div style=\"font-family:var(--serif);font-size:44px;color:var(--gold);margin-bottom:16px\">Merci.</div>
+      <p style=\"color:var(--ink-dim);line-height:1.7;margin-bottom:32px\">Your order has been received. A concierge will reach out within one business day at <a href=\"mailto:watches@fashes.com\" style=\"color:var(--gold)\">watches@fashes.com</a> to arrange payment and shipping.</p>
+      <button class=\"btn btn-gold\" onclick=\"localStorage.removeItem('fashes_cart');location.href='index.html'\">Return Home</button>
+    </div>`;
+    document.body.appendChild(t);
+  };
+</script>
+</body>
+</html>
+"
+Observation: Create successful: /app/frontend/public/watches/cart.html
